@@ -29,14 +29,14 @@ namespace RdpManager
             foreach (var server in servers)
             {
                 var serverName = Path.GetFileName(server);
-                var parent = tree.Nodes.Add(serverName, serverName);
+                var parent = tree.Nodes.Add(serverName, serverName, 0);
                 var rdps = Directory.GetFiles(server, "*.rdp");
                 foreach (var rdp in rdps)
                 {
                     var rdpText = File.ReadAllText(rdp);
                     var username = BetweenStrings(rdpText, "username:s:", "password");
                     parent.Tag = serverName;
-                    parent.Nodes.Add(username);
+                    parent.Nodes.Add(username, username, 1);
                 }
             }
 
@@ -49,13 +49,6 @@ namespace RdpManager
             var p2 = text.IndexOf(end, p1, StringComparison.Ordinal);
 
             return end == "" ? text.Substring(p1) : text.Substring(p1, p2 - p1);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-            RefreshTree();
-
         }
 
         private void tree_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -81,7 +74,7 @@ namespace RdpManager
             {
                 if (tree.SelectedNode.Parent?.Tag is string server)
                 {
-                    var path = DataPath + "\\" + server + "\\" + tree.SelectedNode.Text.Trim() + ".rdp";
+                    var path = $"{DataPath}\\{server}\\{tree.SelectedNode.Text.Trim()}.rdp";
                     if (MessageBox.Show("Are You Sure?", "Alert", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         File.Delete(path);

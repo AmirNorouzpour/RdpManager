@@ -29,7 +29,6 @@ namespace RdpManager
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox_port = new System.Windows.Forms.TextBox();
             this.textBox_Domain = new System.Windows.Forms.TextBox();
@@ -41,14 +40,6 @@ namespace RdpManager
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_server = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(402, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
             // 
             // button1
             // 
@@ -148,9 +139,9 @@ namespace RdpManager
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox_server);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "RdpItem";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "RdpItem";
             this.ResumeLayout(false);
@@ -159,8 +150,6 @@ namespace RdpManager
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox_port;
         private System.Windows.Forms.TextBox textBox_Domain;
