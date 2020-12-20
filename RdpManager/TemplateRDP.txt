@@ -1,5 +1,5 @@
 screen mode id:i:2
-use multimon:i:0
+use multimon:i:{4}
 desktopwidth:i:1600
 desktopheight:i:900
 session bpp:i:32

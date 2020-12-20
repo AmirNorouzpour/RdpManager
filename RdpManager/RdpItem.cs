@@ -18,10 +18,11 @@ namespace RdpManager
                 Domain = textBox_Domain.Text,
                 IpAddress = textBox_server.Text + ":" + textBox_port.Text,
                 Password = textBox_password.Text,
-                Username = textBox_username.Text
+                Username = textBox_username.Text,
+                MultiMonitor = checkBox_multimon.Checked ? 1 : 0
             });
 
-            var path = Main.DataPath + "//" + textBox_server.Text + "//" + textBox_username.Text + ".rdp";
+            var path = Main.DataPath + "//" + textBox_server.Text + "//" + textBox_name.Text + ".rdp";
             File.WriteAllText(path, str);
             DialogResult = DialogResult.OK;
         }

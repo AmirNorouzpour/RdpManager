@@ -39,11 +39,15 @@ namespace RdpManager
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_server = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.checkBox_multimon = new System.Windows.Forms.CheckBox();
+            this.textBox_name = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(94, 140);
+            this.button1.Location = new System.Drawing.Point(94, 203);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(291, 23);
             this.button1.TabIndex = 19;
@@ -53,21 +57,21 @@ namespace RdpManager
             // 
             // textBox_port
             // 
-            this.textBox_port.Location = new System.Drawing.Point(310, 21);
+            this.textBox_port.Location = new System.Drawing.Point(310, 54);
             this.textBox_port.Name = "textBox_port";
             this.textBox_port.Size = new System.Drawing.Size(75, 23);
             this.textBox_port.TabIndex = 18;
             // 
             // textBox_Domain
             // 
-            this.textBox_Domain.Location = new System.Drawing.Point(94, 111);
+            this.textBox_Domain.Location = new System.Drawing.Point(94, 144);
             this.textBox_Domain.Name = "textBox_Domain";
             this.textBox_Domain.Size = new System.Drawing.Size(291, 23);
             this.textBox_Domain.TabIndex = 17;
             // 
             // textBox_password
             // 
-            this.textBox_password.Location = new System.Drawing.Point(94, 81);
+            this.textBox_password.Location = new System.Drawing.Point(94, 114);
             this.textBox_password.Name = "textBox_password";
             this.textBox_password.PasswordChar = '*';
             this.textBox_password.Size = new System.Drawing.Size(291, 23);
@@ -76,7 +80,7 @@ namespace RdpManager
             // 
             // textBox_username
             // 
-            this.textBox_username.Location = new System.Drawing.Point(94, 51);
+            this.textBox_username.Location = new System.Drawing.Point(94, 84);
             this.textBox_username.Name = "textBox_username";
             this.textBox_username.Size = new System.Drawing.Size(291, 23);
             this.textBox_username.TabIndex = 15;
@@ -84,7 +88,7 @@ namespace RdpManager
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 114);
+            this.label4.Location = new System.Drawing.Point(12, 147);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 15);
             this.label4.TabIndex = 14;
@@ -93,7 +97,7 @@ namespace RdpManager
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 85);
+            this.label3.Location = new System.Drawing.Point(12, 118);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 15);
             this.label3.TabIndex = 13;
@@ -102,7 +106,7 @@ namespace RdpManager
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 53);
+            this.label2.Location = new System.Drawing.Point(12, 86);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 15);
             this.label2.TabIndex = 12;
@@ -111,7 +115,7 @@ namespace RdpManager
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 24);
+            this.label1.Location = new System.Drawing.Point(12, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 15);
             this.label1.TabIndex = 11;
@@ -119,16 +123,54 @@ namespace RdpManager
             // 
             // textBox_server
             // 
-            this.textBox_server.Location = new System.Drawing.Point(94, 21);
+            this.textBox_server.Location = new System.Drawing.Point(94, 54);
             this.textBox_server.Name = "textBox_server";
             this.textBox_server.Size = new System.Drawing.Size(210, 23);
             this.textBox_server.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 178);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(76, 15);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "All Monitor : ";
+            // 
+            // checkBox_multimon
+            // 
+            this.checkBox_multimon.AutoSize = true;
+            this.checkBox_multimon.Location = new System.Drawing.Point(94, 180);
+            this.checkBox_multimon.Name = "checkBox_multimon";
+            this.checkBox_multimon.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_multimon.TabIndex = 21;
+            this.checkBox_multimon.UseVisualStyleBackColor = true;
+            // 
+            // textBox_name
+            // 
+            this.textBox_name.Location = new System.Drawing.Point(94, 25);
+            this.textBox_name.Name = "textBox_name";
+            this.textBox_name.Size = new System.Drawing.Size(291, 23);
+            this.textBox_name.TabIndex = 23;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(12, 28);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(45, 15);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "Name :";
             // 
             // RdpItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(402, 179);
+            this.ClientSize = new System.Drawing.Size(402, 246);
+            this.Controls.Add(this.textBox_name);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.checkBox_multimon);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox_port);
             this.Controls.Add(this.textBox_Domain);
@@ -160,5 +202,9 @@ namespace RdpManager
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox_server;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.CheckBox checkBox_multimon;
+        private System.Windows.Forms.TextBox textBox_name;
+        private System.Windows.Forms.Label label6;
     }
 }

@@ -33,10 +33,9 @@ namespace RdpManager
                 var rdps = Directory.GetFiles(server, "*.rdp");
                 foreach (var rdp in rdps)
                 {
-                    var rdpText = File.ReadAllText(rdp);
-                    var username = BetweenStrings(rdpText, "username:s:", "password");
+                    var name = Path.GetFileNameWithoutExtension(rdp);
                     parent.Tag = serverName;
-                    parent.Nodes.Add(username, username, 1);
+                    parent.Nodes.Add(name, name, 1);
                 }
             }
 
@@ -55,7 +54,9 @@ namespace RdpManager
         {
             if (tree.SelectedNode.Parent?.Tag is string server)
             {
-                RdpHandler.Mstsc("mstsc " + DataPath + "\\" + server + "\\" + tree.SelectedNode.Text.Trim() + ".rdp");
+                var path = DataPath + "\\" + server + "\\" + tree.SelectedNode.Text + ".rdp";
+                var str = "\"" + path + "\"";
+                RdpHandler.Mstsc("mstsc " + str);
             }
         }
 

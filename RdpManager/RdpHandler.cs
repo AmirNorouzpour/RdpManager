@@ -16,7 +16,7 @@ namespace RdpManager
 
             var pwstr = BitConverter.ToString(DataProtection.ProtectData(Encoding.Unicode.GetBytes(info.Password), ""))
                 .Replace("-", "");
-            var str = string.Format(File.ReadAllText(Main.DataPath + "\\TemplateRDP.txt"), info.IpAddress, info.Username, pwstr, info.Domain);
+            var str = string.Format(File.ReadAllText(Main.DataPath + "\\TemplateRDP.txt"), info.IpAddress, info.Username, pwstr, info.Domain,info.MultiMonitor);
             return str;
 
         }
@@ -44,5 +44,6 @@ namespace RdpManager
         public string Username { get; set; }
         public string Password { get; set; }
         public string Domain { get; set; }
+        public int MultiMonitor { get; set; }
     }
 }
