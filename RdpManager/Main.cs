@@ -76,7 +76,8 @@ namespace RdpManager
                 if (tree.SelectedNode.Parent?.Tag is string server)
                 {
                     var path = $"{DataPath}\\{server}\\{tree.SelectedNode.Text.Trim()}.rdp";
-                    if (MessageBox.Show("Are You Sure?", "Alert", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("Are You Sure?", "Alert", MessageBoxButtons.YesNo, MessageBoxIcon.Question) ==
+                        DialogResult.Yes)
                     {
                         File.Delete(path);
                         RefreshTree();
